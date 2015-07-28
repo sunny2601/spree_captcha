@@ -1,0 +1,13 @@
+<%= Spree.t('inquiry_has_been_received', :site => Spree::Config[:site_name]) %>
+
+========================================
+<%= "#{Spree.t('from')} : #{@contact.name} (#{@contact.email})" %>
+<%= "#{Spree.t('inquiry_type')} : #{@contact.topic.title}" %>
+<% unless @contact.order_number.blank? %>
+    <%= "#{Spree.t('order_number')} : #{@contact.order_number}" %>
+<% end %>
+
+<%= Spree.t('message') %>:
+========================================
+<%= @contact.message %>
+========================================
